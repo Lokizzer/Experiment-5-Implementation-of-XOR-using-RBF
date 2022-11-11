@@ -46,8 +46,9 @@ Forward Propagation and Backward Propagation
 STEP 5:
 Test the model
 
-## PROGRAM:
-```python
+PROGRAM:
+''' python
+
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -59,8 +60,6 @@ def gaussian_rbf(x, landmark, gamma=1):
     def end_to_end(X1, X2, ys, mu1, mu2):
     from_1 = [gaussian_rbf(i, mu1) for i in zip(X1, X2)]
     from_2 = [gaussian_rbf(i, mu2) for i in zip(X1, X2)]
-    # plot
-    
     plt.figure(figsize=(13, 5))
     plt.subplot(1, 2, 1)
     plt.scatter((x1[0], x1[3]), (x2[0], x2[3]), label="Class_0")
@@ -69,7 +68,6 @@ def gaussian_rbf(x, landmark, gamma=1):
     plt.ylabel("$X2$", fontsize=15)
     plt.title("Xor: Linearly Inseparable", fontsize=15)
     plt.legend()
-
     plt.subplot(1, 2, 2)
     plt.scatter(from_1[0], from_2[0], label="Class_0")
     plt.scatter(from_1[1], from_2[1], label="Class_1")
@@ -82,18 +80,13 @@ def gaussian_rbf(x, landmark, gamma=1):
     plt.ylabel(f"$mu2$: {(mu2)}", fontsize=15)
     plt.title("Transformed Inputs: Linearly Seperable", fontsize=15)
     plt.legend()
-
-    # solving problem using matrices form
-    # AW = Y
     A = []
-
     for i, j in zip(from_1, from_2):
         temp = []
         temp.append(i)
         temp.append(j)
         temp.append(1)
         A.append(temp)
-    
     A = np.array(A)
     W = np.linalg.inv(A.T.dot(A)).dot(A.T).dot(ys)
     print(np.round(A.dot(W)))
@@ -141,11 +134,13 @@ print(f"Input:{np.array([1, 1])}, Predicted: {predict_matrix(np.array([1, 1]), w
 
 OUTPUT :
 
-![201342895-7e6b64ec-3dac-4e52-abfb-9bf09f5f4ad1](https://user-images.githubusercontent.com/112338645/201348322-ec63efdf-e656-40af-8809-5dcd41909579.png)
+![201342895-7e6b64ec-3dac-4e52-abfb-9bf09f5f4ad1](https://user-images.githubusercontent.com/112338645/201349748-6fd2f3de-ed19-47f3-850b-670b3874eee4.png)
 
-![201342944-b3399cff-d4a2-4394-9536-1e229e0ce05d](https://user-images.githubusercontent.com/112338645/201348366-76be78e4-53cc-45a2-9f4e-9a780c127596.png)
+![201342944-b3399cff-d4a2-4394-9536-1e229e0ce05d](https://user-images.githubusercontent.com/112338645/201349771-53bb2e40-5e13-43ed-bb2c-7d2d900260e6.png)
+
 
 RESULT:
+
 Thus, the implementaion of XOR using RBF is executed successfully.
 
 
