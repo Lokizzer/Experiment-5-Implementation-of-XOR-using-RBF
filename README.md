@@ -47,7 +47,16 @@ STEP 5:
 Test the model
 
 PROGRAM:
-''' 
+'''python
+import numpy as np
+import matplotlib.pyplot as plt
+import tensorflow as tf
+from tensorflow.keras.initializers import Initializer
+from tensorflow.keras.layers import Layer
+from tensorflow.keras.initializers import RandomUniform, Initializer, Constant
+
+def gaussian_rbf(x, landmark, gamma=1):
+    return np.exp(-gamma * np.linalg.norm(x - landmark)**2)
 
 '''
 
