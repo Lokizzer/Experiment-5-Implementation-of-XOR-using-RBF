@@ -47,7 +47,7 @@ STEP 5:
 Test the model
 
 PROGRAM:
-'''python
+'''
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
