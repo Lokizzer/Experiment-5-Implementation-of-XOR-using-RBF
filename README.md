@@ -48,7 +48,6 @@ Test the model
 
 PROGRAM:
 ''' python
-
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -128,7 +127,6 @@ print(f"Input:{np.array([0, 0])}, Predicted: {predict_matrix(np.array([0, 0]), w
 print(f"Input:{np.array([0, 1])}, Predicted: {predict_matrix(np.array([0, 1]), w)}")
 print(f"Input:{np.array([1, 0])}, Predicted: {predict_matrix(np.array([1, 0]), w)}")
 print(f"Input:{np.array([1, 1])}, Predicted: {predict_matrix(np.array([1, 1]), w)}")
-
 '''
 
 
